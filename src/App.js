@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import SingleImage from "./components/SingleImage";
+// import { FaRegHeart } from "react-icons/fa";
 import getImages from "./utils/nasaImages";
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  // const [heartClicked, setHeartClicked] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -25,13 +28,17 @@ const App = () => {
       <div className="imagesContainer">
         {images.map((image) => {
           return (
-            <div className="imageContainer" key={image.identifier}>
-              <img src={image.src} alt="earth from space" className="imggg" />
-              <div className="imageDetails">
-                <h5>{image.caption}</h5>
-                <p>{image.date}</p>
-              </div>
-            </div>
+            <SingleImage image={image} />
+            // <div className="imageContainer" key={image.identifier}>
+            //   <img src={image.src} alt="earth from space" className="imggg" />
+            //   <div className="imageDetails">
+            //     <h5>{image.caption}</h5>
+            //     <div className="dateAndHeart">
+            //       <p className="date">{image.date}</p>
+            //       <FaRegHeart className="heart" />
+            //     </div>
+            //   </div>
+            // </div>
           );
         })}
       </div>

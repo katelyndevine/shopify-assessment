@@ -38,6 +38,14 @@ code {
   padding: 15px;
 }
 
+.dateAndHeart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  align-content: center;
+}
+
 h1 {
   color: blue;
 }
@@ -46,6 +54,11 @@ h5 {
   font-size: 15px;
 }
 
-p {
+.date {
   font-size: 10px;
+  margin: none;
+}
+
+.heart {
+  margin: 10px;
 }
