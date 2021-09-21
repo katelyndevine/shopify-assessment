@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SingleImage from "./components/SingleImage";
 import getImages from "./utils/nasaImages";
+import Loader from "react-loader-spinner";
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -17,7 +18,11 @@ const App = () => {
   console.log("this is images outsite UseEffect: ", images);
 
   if (!imagesLoaded) {
-    return <div>loading!!!!</div>;
+    return (
+      <div id="loader">
+        <Loader type="Circles" color="black" />
+      </div>
+    );
   }
 
   return (
