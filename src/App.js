@@ -1,61 +1,42 @@
-// import logo from "./logo.svg";
-// import "./App.css";
-const axios = require("axios");
-const apiKey = "96mPPwoUqI3v9Gj2LYa28fOsAhClkyfKVERkhrFZ";
-const url = `https://api.nasa.gov/EPIC/api/enhanced/images?api_key=${apiKey}`;
+import { useState, useEffect } from "react";
+import getImages from "./utils/nasaImages";
 
-// const url = "https://epic.gsfc.nasa.gov/api/enhanced";
-//
+const App = () => {
+  const [images, setImages] = useState([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-const getImages = async () => {
-  try {
-    const { data } = await axios.get(url);
-    console.log("this is data: ", data);
-    const imag = getUrl(data);
-  } catch (err) {
-    console.log("error in get function", err);
+  useEffect(() => {
+    (async () => {
+      const imgs = await getImages();
+      await setImages(imgs);
+      setImagesLoaded(true);
+    })();
+  }, []);
+
+  console.log("this is images outsite UseEffect: ", images);
+
+  if (!imagesLoaded) {
+    return <div>loading!!!!</div>;
   }
-};
 
-getImages();
-
-const getUrl = async (images) => {
-  console.log("this is images", images);
-  // let finalImgs = [];
-  images[0]
-    ? images.map((obj) => {
-        const year = obj.date.slice(0, 4);
-        const month = obj.date.slice(5, 7);
-        const day = obj.date.slice(8, 10);
-        console.log("this is date", year, month, day);
-        obj.date = `${month}/${day}/${year}`;
-        obj.src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${obj.image}.png?api_key=${apiKey}`;
-        // finalImgs.push(obj);
-      })
-    : console.log("we never mapped");
-  console.log(images);
-  return images;
-};
-
-function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <h1>Spacetagram</h1>
+      <div className="imagesContainer">
+        {images.map((image) => {
+          return (
+            <div className="imageContainer" key={image.identifier}>
+              <img src={image.src} alt="earth from space" className="imggg" />
+              <div className="imageDetails">
+                <h5>{image.caption}</h5>
+                <p>{image.date}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
