@@ -1,7 +1,9 @@
-// import { useState, useEffect } from "react";
-import { FaRegHeart } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const SingleImage = (props) => {
+  const [heartClicked, setHeartClicked] = useState(false);
+
   return (
     <div className="imageContainer" key={props.image.identifier}>
       <img src={props.image.src} alt="earth from space" className="imggg" />
@@ -9,7 +11,14 @@ const SingleImage = (props) => {
         <h5>{props.image.caption}</h5>
         <div className="dateAndHeart">
           <p className="date">{props.image.date}</p>
-          <FaRegHeart className="heart" />
+          {heartClicked ? (
+            <FaHeart className="heart" onClick={() => setHeartClicked(false)} />
+          ) : (
+            <FaRegHeart
+              className="heart"
+              onClick={() => setHeartClicked(true)}
+            />
+          )}
         </div>
       </div>
     </div>
