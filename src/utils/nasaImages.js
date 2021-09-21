@@ -1,7 +1,3 @@
-// require("dotenv").config();
-// console.log("this is env!!!!!!:", apiKey);
-// const apiKey = process.env.NASA_API;
-
 const axios = require("axios");
 const apiKey = "96mPPwoUqI3v9Gj2LYa28fOsAhClkyfKVERkhrFZ";
 const url = `https://api.nasa.gov/EPIC/api/enhanced/images?api_key=${apiKey}`;
@@ -32,6 +28,5 @@ const getImages = async () => {
     console.log("error in get function", err);
   }
 };
-// getImages();
 
 export default getImages;

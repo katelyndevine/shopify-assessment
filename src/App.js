@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import SingleImage from "./components/SingleImage";
-// import { FaRegHeart } from "react-icons/fa";
 import getImages from "./utils/nasaImages";
 
 const App = () => {
