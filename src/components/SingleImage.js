@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 const SingleImage = (props) => {
   const [heartClicked, setHeartClicked] = useState(false);
@@ -18,7 +19,12 @@ const SingleImage = (props) => {
           <p className="date">{props.image.date}</p>
           {/* show a different heart based on user click(s) */}
           {heartClicked ? (
-            <FaHeart className="heart" onClick={() => setHeartClicked(false)} />
+            <IconContext.Provider value={{ color: "red", title: "heart icon" }}>
+              <FaHeart
+                className="heart"
+                onClick={() => setHeartClicked(false)}
+              />
+            </IconContext.Provider>
           ) : (
             <FaRegHeart
               className="heart"
