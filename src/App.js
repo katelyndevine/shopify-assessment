@@ -8,6 +8,8 @@ const App = () => {
   const [images, setImages] = useState([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // get images from our nasalImages util file and set state
+  // once finished, set images Loaded to true
   useEffect(() => {
     (async () => {
       const imgs = await getImages();
@@ -17,7 +19,7 @@ const App = () => {
   }, []);
 
   console.log("this is images outsite UseEffect: ", images);
-
+  // Loader until getImages() is complete
   if (!imagesLoaded) {
     return (
       <div id="loader">
@@ -25,7 +27,7 @@ const App = () => {
       </div>
     );
   }
-
+  // Once finished loading return our images
   return (
     <div className="App">
       <header>

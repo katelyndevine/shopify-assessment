@@ -16,6 +16,7 @@ const SingleImage = (props) => {
         <h5>{props.image.caption}</h5>
         <div className="dateAndHeart">
           <p className="date">{props.image.date}</p>
+          {/* show a different heart based on user click(s) */}
           {heartClicked ? (
             <FaHeart className="heart" onClick={() => setHeartClicked(false)} />
           ) : (
