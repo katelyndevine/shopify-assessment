@@ -1,6 +1,6 @@
 # Shopify Winter Challenge | Spacestagram
 
-Spacestagram helps users view images taken in space. Images can be liked and unliked. The app utilizes NASA's EPIC DAILY “BLUE MARBLE” API.
+Spacestagram helps users view images taken in space. Images can be liked and unliked. The app utilizes NASA's Epic Daily “Blue Marble” API.
 
 ![Web App preview](src/images/preview.png)
 
@@ -8,7 +8,7 @@ Spacestagram helps users view images taken in space. Images can be liked and unl
 
 - HTML5
 - CSS3
-- JavaScript (ES6)
+- JavaScript(ES6)
 - React
 - Git
 

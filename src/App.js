@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SingleImage from "./components/SingleImage";
 import getImages from "./utils/nasaImages";
 import Loader from "react-loader-spinner";
+import { FaRegHeart } from "react-icons/fa";
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -28,6 +29,10 @@ const App = () => {
   return (
     <div className="App">
       <h1>Spacetagram</h1>
+      <h4>Brought to you by NASA's Epic Daily “Blue Marble” API.</h4>
+      <h6>
+        Click the <FaRegHeart /> to keep track of your favorite images!
+      </h6>
       <div className="imagesContainer">
         {images.map((image) => {
           return <SingleImage image={image} />;

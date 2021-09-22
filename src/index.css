@@ -67,9 +67,27 @@ h1 {
   text-align: center;
 }
 
+h4 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+h6 {
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+}
+
 @media screen and (max-width: 875px) {
   h1 {
     font-size: 75px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 9px;
   }
 }
 
