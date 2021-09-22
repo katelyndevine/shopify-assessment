@@ -13,7 +13,7 @@ const getImages = async () => {
     function formatedImages(images) {
       console.log("this is images", images);
       images[0]
-        ? images.map((obj) => {
+        ? images.forEach((obj) => {
             const year = obj.date.slice(0, 4);
             const month = obj.date.slice(5, 7);
             const day = obj.date.slice(8, 10);

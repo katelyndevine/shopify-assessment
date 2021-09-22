@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const SingleImage = (props) => {
