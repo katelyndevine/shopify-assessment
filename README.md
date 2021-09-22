@@ -14,7 +14,7 @@ Spacestagram helps users view images taken in space. Images can be liked and unl
 
 ## Try it out!
 
-[Live site here](https://cryptic-inlet-36213.herokuapp.com/)
+[Live site here](https://unruffled-kare-f2c6fc.netlify.app/)
 
 ## Getting Started
 
