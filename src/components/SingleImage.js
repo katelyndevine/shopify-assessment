@@ -6,7 +6,12 @@ const SingleImage = (props) => {
 
   return (
     <div className="imageContainer" key={props.image.identifier}>
-      <img src={props.image.src} alt="earth from space" className="imggg" />
+      <img
+        src={props.image.src}
+        alt={`Earth as seen from space. ${props.image.caption}.`}
+        title="Earth as seen from space"
+        className="imggg"
+      />
       <div className="imageDetails">
         <h5>{props.image.caption}</h5>
         <div className="dateAndHeart">

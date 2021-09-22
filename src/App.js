@@ -28,16 +28,18 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Spacetagram</h1>
-      <h4>Brought to you by NASA's Epic Daily “Blue Marble” API.</h4>
-      <h6>
-        Click the <FaRegHeart /> to keep track of your favorite images!
-      </h6>
-      <div className="imagesContainer">
+      <header>
+        <h1>Spacetagram</h1>
+        <h4>Brought to you by NASA's Epic Daily “Blue Marble” API.</h4>
+        <h6>
+          Click the <FaRegHeart /> to keep track of your favorite images!
+        </h6>
+      </header>
+      <main className="imagesContainer">
         {images.map((image) => {
-          return <SingleImage image={image} />;
+          return <SingleImage image={image} key={image.identifier} />;
         })}
-      </div>
+      </main>
     </div>
   );
 };

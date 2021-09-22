@@ -11,7 +11,6 @@ const getImages = async () => {
     // Update our array of image objects to improve date format
     // and add a new src property (which is the image url)
     function formatedImages(images) {
-      console.log("this is images", images);
       images[0]
         ? images.forEach((obj) => {
             const year = obj.date.slice(0, 4);
@@ -21,7 +20,6 @@ const getImages = async () => {
             obj.src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${obj.image}.png?api_key=${apiKey}`;
           })
         : console.log("we never mapped");
-      console.log("this is images before we return it: ", images);
       return images;
     }
   } catch (err) {
